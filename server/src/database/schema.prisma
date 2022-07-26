@@ -1,0 +1,17 @@
+model Product {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @updatedAt
+  title     String
+  price     Float
+}
+
+// datasource db {
+  
+// }
+
+
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-client-js"
+}
