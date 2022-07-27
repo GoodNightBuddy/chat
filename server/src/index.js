@@ -2,7 +2,7 @@ const { readFileSync } = require('fs');
 const { createServer, createPubSub } = require("@graphql-yoga/node");
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
-// const Subscription = require('./resolvers/Subscription')
+const Subscription = require('./resolvers/Subscription')
 const { PrismaClient } = require('./generated/prisma-client-js')
 
 
@@ -13,7 +13,7 @@ const typeDefs = readFileSync(require.resolve('./schema.graphql')).toString('utf
 const resolvers = {
   Query,
   Mutation,
-  // Subscription
+  Subscription
 };
 
 const pubSub = createPubSub()
