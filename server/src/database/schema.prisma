@@ -6,7 +6,7 @@ model Product {
 }
 
 datasource db {
-  url = env("DATABASE_URL")
+  url = "postgres://xyppvjzcifxisl:5881bf529458ce9b4884697b2785f1e5f6acbf4d2cc4233a33066a07be1e2724@ec2-34-235-198-25.compute-1.amazonaws.com:5432/d6ath87506eq5g"
   provider = "postgresql"
 }
 
