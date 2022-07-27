@@ -1,6 +1,6 @@
 model Product {
   id        Int      @id @default(autoincrement())
-  // createdAt DateTime @updatedAt
+  createdAt DateTime @updatedAt
   title     String
   price     Float
 }
