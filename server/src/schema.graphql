@@ -1,14 +1,49 @@
 type Query {
   version: String!
   products: [Product!]!
+  messages: [Message!]!
+}
+
+input ProductInput {
+  title: String!
+  price: Float!
 }
 
 type Mutation {
-  postProduct(title: String!, price: Float!): Product!
+  createProduct(product: ProductInput!): Product!
+}
+
+type Subscription {
+  mewProduct: Product!
 }
 
 type Product {
   id: ID!
   title: String!
   price: Float!
+}
+
+
+
+
+
+
+input MessageInput {
+  text: String!
+}
+
+type Message {
+  id: ID!
+  text: String!
+}
+
+type Comment {
+  text: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  comments: [Comment!]!
+ messages: [Message!]!
 }

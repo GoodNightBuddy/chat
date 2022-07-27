@@ -1,10 +1,11 @@
-function postProduct(_parent, _args, _context, _info) {
-  return _context.prisma.createProducr({
-    title: _args.title,
-    price: _args.price
-  })
+async function createProduct(parent, args, context, _info) {
+  return context.prisma.product.create({data: args.product})
+}
+
+async function createMessage(parent, args, context, _info) {
+  return context.prisma.message.create({data: args.message})
 }
 
 module.exports = {
-  postProduct
+  createProduct
 }
