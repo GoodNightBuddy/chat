@@ -1,0 +1,17 @@
+.messageForm {
+  position: fixed;
+  bottom: 0;
+  width: 800px;
+  display: flex;
+}
+
+.text {
+  resize: none;
+  flex-grow: 7;
+  margin: 10px;
+}
+
+.submit-button {
+  flex-grow: 1;
+  margin: 10px;
+}

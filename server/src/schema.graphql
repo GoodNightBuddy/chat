@@ -1,34 +1,45 @@
 type Query {
   version: String!
-  products: [Product!]!
   messages: [Message!]!
-}
+  message: Message!
 
+}
 
 input MessageInput {
   text: String!
-  user: String!
+}
+
+input CommentInput {
+  text: String!
+  messageId: Int!
 }
 
 type Mutation {
   createMessage(message: MessageInput!): Message!
+  createComment(comment: CommentInput!): Comment!
 }
 
 type Message {
-  id: ID!
-  createdAt: String
+  id: Int!
+  createdAt: String!
   text: String!
-  # comments: [Comment!]
-  user: String!
+  likesCount: Int!
+  dislikesCount: Int!
+  comments: [Comment!]!
+}
+
+type Comment {
+  id: Int!
+  text: String!
+  message: Message!
 }
 
 type Subscription {
-  newMessage: Message
+  newMessage: Message!
+  newComment: Comment!
 }
 
 type Comment {
   text: String!
-  user: User!
   message: Message!
-
 }

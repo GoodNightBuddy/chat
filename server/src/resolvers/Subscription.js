@@ -1,11 +1,9 @@
-const newMessageSubscribe = (_parent, _args, context) => context.pubSub.subscribe('NEW_MESSAGE')
+const { newMessage } = require('./Message');
+const { newComment } = require('./Comment');
 
-const newMessage = {
-  subscribe: newMessageSubscribe,
-  resolve: payload => payload
-}
+const Subscription = {
+  newMessage,
+  newComment
+};
 
-module.exports = {
-  // newProduct,
-  newMessage
-}
+module.exports = Subscription;

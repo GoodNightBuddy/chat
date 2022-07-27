@@ -1,26 +1,23 @@
 model Message {
-  id              Int      @id @default(autoincrement())
-  createdAt       DateTime @updatedAt
-  text            String
-  likesCount      Int
-  dislikesCount   Int
-  comments        Comment[]
+  id            Int       @id @default(autoincrement())
+  createdAt     DateTime  @updatedAt
+  text          String
+  likesCount    Int       @default(0)
+  dislikesCount Int       @default(0)
+  comments      Comment[]
 }
 
 model Comment {
-  id               Int      @id @default(autoincrement())
-  text             String
-  messageId        Int
-  message          Message @relation(fields: [messageId], references: [id])
+  id        Int     @id @default(autoincrement())
+  text      String
+  messageId Int
+  message   Message @relation(fields: [messageId], references: [id])
 }
-
 
 datasource db {
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
   provider = "postgresql"
 }
-
-
 
 generator client {
   provider = "prisma-client-js"

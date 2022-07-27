@@ -1,0 +1,1 @@
+export * as messageActionCreator from './message/actions'

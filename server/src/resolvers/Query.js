@@ -1,13 +1,14 @@
-const version = () => '1.4.8.8'
+const { messages } = require('./Message');
+// const { comments } = require('./Comment');
+const { message } = require('./Comment');
 
-const messages = async (_parent, _args, context, _info) => {
 
-  const foundMessages = await context.prisma.message.findMany()
 
-  return foundMessages
-}
+const Query = {
+  messages,
+  message,
+  // comments,
+  version: () => '1.0',
+};
 
-module.exports = {
-  version,
-  messages
-}
+module.exports = Query;

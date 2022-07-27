@@ -1,9 +1,9 @@
-async function createMessage(parent, args, context, _info) {
-  const createdMessage = await context.prisma.message.create({data: args.message})
-  context.pubSub.publish('NEW_MESSAGE', createdMessage);
-  return createdMessage
-}
+const { createMessage } = require('./Message');
+const { createComment } = require('./Comment');
 
-module.exports = {
-  createMessage
-}
+const Mutation = {
+  createMessage,
+  createComment
+};
+
+module.exports = Mutation;

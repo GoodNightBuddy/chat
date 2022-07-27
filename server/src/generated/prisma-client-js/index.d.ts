@@ -2928,8 +2928,8 @@ export namespace Prisma {
   export type MessageCreateInput = {
     createdAt?: Date | string
     text: string
-    likesCount: number
-    dislikesCount: number
+    likesCount?: number
+    dislikesCount?: number
     comments?: CommentCreateNestedManyWithoutMessageInput
   }
 
@@ -2937,8 +2937,8 @@ export namespace Prisma {
     id?: number
     createdAt?: Date | string
     text: string
-    likesCount: number
-    dislikesCount: number
+    likesCount?: number
+    dislikesCount?: number
     comments?: CommentUncheckedCreateNestedManyWithoutMessageInput
   }
 
@@ -2963,8 +2963,8 @@ export namespace Prisma {
     id?: number
     createdAt?: Date | string
     text: string
-    likesCount: number
-    dislikesCount: number
+    likesCount?: number
+    dislikesCount?: number
   }
 
   export type MessageUpdateManyMutationInput = {
@@ -3397,16 +3397,16 @@ export namespace Prisma {
   export type MessageCreateWithoutCommentsInput = {
     createdAt?: Date | string
     text: string
-    likesCount: number
-    dislikesCount: number
+    likesCount?: number
+    dislikesCount?: number
   }
 
   export type MessageUncheckedCreateWithoutCommentsInput = {
     id?: number
     createdAt?: Date | string
     text: string
-    likesCount: number
-    dislikesCount: number
+    likesCount?: number
+    dislikesCount?: number
   }
 
   export type MessageCreateOrConnectWithoutCommentsInput = {
