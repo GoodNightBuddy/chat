@@ -30,8 +30,7 @@ export type Product = {
 export type Message = {
   id: number
   createdAt: Date
-  title: string
-  price: number
+  text: string
 }
 
 
@@ -1745,66 +1744,56 @@ export namespace Prisma {
 
   export type MessageAvgAggregateOutputType = {
     id: number | null
-    price: number | null
   }
 
   export type MessageSumAggregateOutputType = {
     id: number | null
-    price: number | null
   }
 
   export type MessageMinAggregateOutputType = {
     id: number | null
     createdAt: Date | null
-    title: string | null
-    price: number | null
+    text: string | null
   }
 
   export type MessageMaxAggregateOutputType = {
     id: number | null
     createdAt: Date | null
-    title: string | null
-    price: number | null
+    text: string | null
   }
 
   export type MessageCountAggregateOutputType = {
     id: number
     createdAt: number
-    title: number
-    price: number
+    text: number
     _all: number
   }
 
 
   export type MessageAvgAggregateInputType = {
     id?: true
-    price?: true
   }
 
   export type MessageSumAggregateInputType = {
     id?: true
-    price?: true
   }
 
   export type MessageMinAggregateInputType = {
     id?: true
     createdAt?: true
-    title?: true
-    price?: true
+    text?: true
   }
 
   export type MessageMaxAggregateInputType = {
     id?: true
     createdAt?: true
-    title?: true
-    price?: true
+    text?: true
   }
 
   export type MessageCountAggregateInputType = {
     id?: true
     createdAt?: true
-    title?: true
-    price?: true
+    text?: true
     _all?: true
   }
 
@@ -1903,8 +1892,7 @@ export namespace Prisma {
   export type MessageGroupByOutputType = {
     id: number
     createdAt: Date
-    title: string
-    price: number
+    text: string
     _count: MessageCountAggregateOutputType | null
     _avg: MessageAvgAggregateOutputType | null
     _sum: MessageSumAggregateOutputType | null
@@ -1929,8 +1917,7 @@ export namespace Prisma {
   export type MessageSelect = {
     id?: boolean
     createdAt?: boolean
-    title?: boolean
-    price?: boolean
+    text?: boolean
   }
 
   export type MessageGetPayload<
@@ -2653,8 +2640,7 @@ export namespace Prisma {
   export const MessageScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
-    title: 'title',
-    price: 'price'
+    text: 'text'
   };
 
   export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
@@ -2730,15 +2716,13 @@ export namespace Prisma {
     NOT?: Enumerable<MessageWhereInput>
     id?: IntFilter | number
     createdAt?: DateTimeFilter | Date | string
-    title?: StringFilter | string
-    price?: FloatFilter | number
+    text?: StringFilter | string
   }
 
   export type MessageOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
-    title?: SortOrder
-    price?: SortOrder
+    text?: SortOrder
   }
 
   export type MessageWhereUniqueInput = {
@@ -2748,8 +2732,7 @@ export namespace Prisma {
   export type MessageOrderByWithAggregationInput = {
     id?: SortOrder
     createdAt?: SortOrder
-    title?: SortOrder
-    price?: SortOrder
+    text?: SortOrder
     _count?: MessageCountOrderByAggregateInput
     _avg?: MessageAvgOrderByAggregateInput
     _max?: MessageMaxOrderByAggregateInput
@@ -2763,8 +2746,7 @@ export namespace Prisma {
     NOT?: Enumerable<MessageScalarWhereWithAggregatesInput>
     id?: IntWithAggregatesFilter | number
     createdAt?: DateTimeWithAggregatesFilter | Date | string
-    title?: StringWithAggregatesFilter | string
-    price?: FloatWithAggregatesFilter | number
+    text?: StringWithAggregatesFilter | string
   }
 
   export type ProductCreateInput = {
@@ -2815,48 +2797,41 @@ export namespace Prisma {
 
   export type MessageCreateInput = {
     createdAt?: Date | string
-    title: string
-    price: number
+    text: string
   }
 
   export type MessageUncheckedCreateInput = {
     id?: number
     createdAt?: Date | string
-    title: string
-    price: number
+    text: string
   }
 
   export type MessageUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
+    text?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
+    text?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageCreateManyInput = {
     id?: number
     createdAt?: Date | string
-    title: string
-    price: number
+    text: string
   }
 
   export type MessageUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
+    text?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
+    text?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter = {
@@ -3005,32 +2980,27 @@ export namespace Prisma {
   export type MessageCountOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
-    title?: SortOrder
-    price?: SortOrder
+    text?: SortOrder
   }
 
   export type MessageAvgOrderByAggregateInput = {
     id?: SortOrder
-    price?: SortOrder
   }
 
   export type MessageMaxOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
-    title?: SortOrder
-    price?: SortOrder
+    text?: SortOrder
   }
 
   export type MessageMinOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
-    title?: SortOrder
-    price?: SortOrder
+    text?: SortOrder
   }
 
   export type MessageSumOrderByAggregateInput = {
     id?: SortOrder
-    price?: SortOrder
   }
 
   export type DateTimeFieldUpdateOperationsInput = {

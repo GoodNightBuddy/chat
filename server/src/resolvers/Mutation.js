@@ -7,5 +7,6 @@ async function createMessage(parent, args, context, _info) {
 }
 
 module.exports = {
-  createProduct
+  createProduct,
+  createMessage
 }

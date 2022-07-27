@@ -97,8 +97,7 @@ exports.Prisma.ProductScalarFieldEnum = makeEnum({
 exports.Prisma.MessageScalarFieldEnum = makeEnum({
   id: 'id',
   createdAt: 'createdAt',
-  title: 'title',
-  price: 'price'
+  text: 'text'
 });
 
 exports.Prisma.SortOrder = makeEnum({
