@@ -1,12 +1,12 @@
 model Product {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @updatedAt
+  // createdAt DateTime @updatedAt
   title     String
   price     Float
 }
 
 datasource db {
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
   provider = "postgresql"
 }
 
