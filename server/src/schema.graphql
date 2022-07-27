@@ -4,30 +4,6 @@ type Query {
   messages: [Message!]!
 }
 
-input ProductInput {
-  title: String!
-  price: Float!
-}
-
-type Mutation {
-  createProduct(product: ProductInput!): Product!
-}
-
-type Subscription {
-  newProduct: Product!
-}
-
-type Product {
-  id: ID!
-  createdAt: String
-  title: String!
-  price: Float!
-}
-
-
-
-
-
 
 input MessageInput {
   text: String!
@@ -38,17 +14,16 @@ type Mutation {
   createMessage(message: MessageInput!): Message!
 }
 
-type Subscription {
-  newMessage: Message!
-}
-
 type Message {
   id: ID!
   createdAt: String
   text: String!
-  comments: [Comment!]
+  # comments: [Comment!]
   user: String!
-  # user: User
+}
+
+type Subscription {
+  newMessage: Message
 }
 
 type Comment {
@@ -56,10 +31,4 @@ type Comment {
   user: User!
   message: Message!
 
-}
-
-type User {
-  id: ID!
-  comments: [Comment!]!
-  messages: [Message!]!
 }

@@ -1,15 +1,17 @@
-model Product {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @updatedAt
-  title       String
-  price       Float
+model Message {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @updatedAt
+  text            String
+  likesCount      Int
+  dislikesCount   Int
+  comments        Comment[]
 }
 
-model Message {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @updatedAt
-  text        String
-  user        String
+model Comment {
+  id               Int      @id @default(autoincrement())
+  text             String
+  messageId        Int
+  message          Message @relation(fields: [messageId], references: [id])
 }
 
 

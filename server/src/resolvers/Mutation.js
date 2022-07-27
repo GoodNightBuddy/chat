@@ -1,12 +1,9 @@
-async function createProduct(parent, args, context, _info) {
-  return context.prisma.product.create({data: args.product})
-}
-
 async function createMessage(parent, args, context, _info) {
-  return context.prisma.message.create({data: args.message})
+  const createdMessage = await context.prisma.message.create({data: args.message})
+  context.pubSub.publish('NEW_MESSAGE', createdMessage);
+  return createdMessage
 }
 
 module.exports = {
-  createProduct,
   createMessage
 }
