@@ -9,6 +9,7 @@ model Message {
   id          Int      @id @default(autoincrement())
   createdAt   DateTime @updatedAt
   text        String
+  user        String
 }
 
 

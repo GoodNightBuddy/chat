@@ -31,6 +31,7 @@ export type Message = {
   id: number
   createdAt: Date
   text: string
+  user: string
 }
 
 
@@ -1754,18 +1755,21 @@ export namespace Prisma {
     id: number | null
     createdAt: Date | null
     text: string | null
+    user: string | null
   }
 
   export type MessageMaxAggregateOutputType = {
     id: number | null
     createdAt: Date | null
     text: string | null
+    user: string | null
   }
 
   export type MessageCountAggregateOutputType = {
     id: number
     createdAt: number
     text: number
+    user: number
     _all: number
   }
 
@@ -1782,18 +1786,21 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     text?: true
+    user?: true
   }
 
   export type MessageMaxAggregateInputType = {
     id?: true
     createdAt?: true
     text?: true
+    user?: true
   }
 
   export type MessageCountAggregateInputType = {
     id?: true
     createdAt?: true
     text?: true
+    user?: true
     _all?: true
   }
 
@@ -1893,6 +1900,7 @@ export namespace Prisma {
     id: number
     createdAt: Date
     text: string
+    user: string
     _count: MessageCountAggregateOutputType | null
     _avg: MessageAvgAggregateOutputType | null
     _sum: MessageSumAggregateOutputType | null
@@ -1918,6 +1926,7 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     text?: boolean
+    user?: boolean
   }
 
   export type MessageGetPayload<
@@ -2640,7 +2649,8 @@ export namespace Prisma {
   export const MessageScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
-    text: 'text'
+    text: 'text',
+    user: 'user'
   };
 
   export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
@@ -2717,12 +2727,14 @@ export namespace Prisma {
     id?: IntFilter | number
     createdAt?: DateTimeFilter | Date | string
     text?: StringFilter | string
+    user?: StringFilter | string
   }
 
   export type MessageOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
     text?: SortOrder
+    user?: SortOrder
   }
 
   export type MessageWhereUniqueInput = {
@@ -2733,6 +2745,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     text?: SortOrder
+    user?: SortOrder
     _count?: MessageCountOrderByAggregateInput
     _avg?: MessageAvgOrderByAggregateInput
     _max?: MessageMaxOrderByAggregateInput
@@ -2747,6 +2760,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter | number
     createdAt?: DateTimeWithAggregatesFilter | Date | string
     text?: StringWithAggregatesFilter | string
+    user?: StringWithAggregatesFilter | string
   }
 
   export type ProductCreateInput = {
@@ -2798,40 +2812,47 @@ export namespace Prisma {
   export type MessageCreateInput = {
     createdAt?: Date | string
     text: string
+    user: string
   }
 
   export type MessageUncheckedCreateInput = {
     id?: number
     createdAt?: Date | string
     text: string
+    user: string
   }
 
   export type MessageUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     text?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     text?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageCreateManyInput = {
     id?: number
     createdAt?: Date | string
     text: string
+    user: string
   }
 
   export type MessageUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     text?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
   }
 
   export type MessageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     text?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter = {
@@ -2981,6 +3002,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     text?: SortOrder
+    user?: SortOrder
   }
 
   export type MessageAvgOrderByAggregateInput = {
@@ -2991,12 +3013,14 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     text?: SortOrder
+    user?: SortOrder
   }
 
   export type MessageMinOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     text?: SortOrder
+    user?: SortOrder
   }
 
   export type MessageSumOrderByAggregateInput = {

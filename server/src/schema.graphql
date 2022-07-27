@@ -19,6 +19,7 @@ type Subscription {
 
 type Product {
   id: ID!
+  createdAt: String
   title: String!
   price: Float!
 }
@@ -30,20 +31,31 @@ type Product {
 
 input MessageInput {
   text: String!
+  user: String!
+}
+
+type Mutation {
+  createMessage(message: MessageInput!): Message!
 }
 
 type Message {
   id: ID!
+  createdAt: String
   text: String!
+  comments: [Comment!]
+  user: String!
+  # user: User
 }
 
 type Comment {
   text: String!
   user: User!
+  message: Message!
+
 }
 
 type User {
   id: ID!
   comments: [Comment!]!
- messages: [Message!]!
+  messages: [Message!]!
 }

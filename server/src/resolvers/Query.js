@@ -16,4 +16,8 @@ const messages = async (_parent, _args, context, _info) => {
   return foundMessages
 }
 
-module.exports = { products, version, messages }
+module.exports = {
+  products,
+  version,
+  messages
+}
