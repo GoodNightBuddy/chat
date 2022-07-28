@@ -1,6 +1,6 @@
 const ActionType = {
   SEND_MESSAGE: 'message/send',
-  RECIEVE_MESSAGE: 'message/recieve',
+  GET_MESSAGES: 'message/get',
 }
 
 export { ActionType }

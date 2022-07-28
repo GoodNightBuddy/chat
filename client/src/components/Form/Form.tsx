@@ -8,7 +8,7 @@ const Form: React.FC = () => {
 
   const dispatch = useDispatch() as AppDispatch
   const [message, setMessage] = useState('')
-  const textArea  = useRef <HTMLTextAreaElement | null>(null)
+  const textArea = useRef<HTMLTextAreaElement | null>(null)
 
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
@@ -17,12 +17,13 @@ const Form: React.FC = () => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
-    console.log(message)
-    dispatch(messageActionCreator.recieveMessage(message))
-    if(textArea.current) {
+    if (!message) return
+
+    await dispatch(messageActionCreator.sendMessage(message))
+
+    if (textArea.current) {
       textArea.current.value = ''
     }
-    
   }
 
   return (
